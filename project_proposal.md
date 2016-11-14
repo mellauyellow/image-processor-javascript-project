@@ -2,14 +2,14 @@
 
 ### Background
 
-Basic image processors usually come with various filters that can be applied to change the appearance of the image, such as blurring, sharpening, and edge detection. This project will give users the ability to edit an existing photo with a variety of filters, and see what the output looks like in real-time.
+Basic image processors usually come with various filters that can be applied to change the appearance of the image, such as blurring, sharpening, and edge detection. This project will give users the ability to edit an existing photo with a variety of filters, and see what the output looks like in real-time.  The image processor and all filters will be built from scratch, with the filters utilizing kernels (also known as convolution matrices or masks).
 
 ### Functionality & MVP  
 
 Using my image processor, users will be able to:
 
 - [ ] Select between a series of pre-existing photos to edit
-- [ ] Choose a variety of filters (either singular or in combination) to apply to the image, and see the result on the screen in real-time
+- [ ] Choose a variety of filters (either singular or in combination) to apply to the image, and see the result on the screen in real-time. Filters will include: Box blur, Gaussian blur, Sharpen, and Edge Detection.
 - [ ] Input custom settings to alter the sensitivity of the filters available
 - [ ] Save a local version of their edited image
 
@@ -56,5 +56,6 @@ Here is a rough outline of the project structure:
 
 Potential bonus features:
 
+- [ ] Add an unsharp mask filter.
 - [ ] Ability to select any local photo for editing instead of a pre-existing photo option.
 - [ ] Ability to select specific areas of the photo to apply filters
