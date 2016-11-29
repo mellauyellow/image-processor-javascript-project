@@ -7,6 +7,14 @@ body, h3, div {
   vertical-align: baseline;
 }
 
+body {
+  display: flex;
+}
+
+.dropbox-and-preview {
+  margin-right: 20px;
+}
+
 #dropbox {
   border: 3px black dashed;
   width: 200px;
@@ -22,4 +30,10 @@ body, h3, div {
 #preview img {
   width: 100px;
   height: 100px;
+}
+
+#canvas {
+  border: 2px green solid;
+  width: 400px;
+  height: 400px;
 }
