@@ -32,8 +32,14 @@ body {
   height: 100px;
 }
 
-#canvas {
+#canvas-static {
   border: 2px green solid;
-  width: 400px;
-  height: 400px;
+  width: 100px;
+  height: 100px;
+}
+
+.dynamic canvas {
+  border: 2px red solid;
+  width: 200px;
+  height: 200px;
 }
