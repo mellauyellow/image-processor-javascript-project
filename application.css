@@ -1,4 +1,4 @@
-body, h3, div {
+body, h3, div, canvas, img {
   margin: 0;
   padding: 0;
   border: 0;
@@ -21,17 +21,6 @@ body {
   height: 300px;
 }
 
-#preview {
-  width: 300px;
-  height: 300px;
-  border: 2px grey solid;
-}
-
-#preview img {
-  width: 100px;
-  height: 100px;
-}
-
 #canvas-static {
   border: 2px green solid;
   width: 100px;
@@ -40,6 +29,4 @@ body {
 
 .dynamic canvas {
   border: 2px red solid;
-  width: 200px;
-  height: 200px;
 }
