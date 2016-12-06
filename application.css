@@ -10,6 +10,7 @@ body, h3, div, canvas, img {
 body {
   display: flex;
   flex-direction: column;
+  font-family: 'Roboto Slab', serif;
 }
 
 .dropbox-and-preview {
@@ -28,6 +29,6 @@ body {
   height: 100px;
 }
 
-.dynamic canvas {
-  border: 2px red solid;
+.dynamic-canvas canvas {
+  border: 1px gray solid;
 }
