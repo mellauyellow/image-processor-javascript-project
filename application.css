@@ -1,4 +1,4 @@
-body, h3, div, canvas, img, button, a, input, label {
+body, h1, h3, div, canvas, img, button, a, input, label {
   margin: 0;
   padding: 0;
   border: 0;
@@ -10,8 +10,28 @@ body, h3, div, canvas, img, button, a, input, label {
 body {
   display: flex;
   flex-direction: column;
-  /*font-family: 'Roboto Slab', serif;*/
+  align-items: center;
   font-family: 'Open Sans', sans-serif;
+  color: #495867;
+  width: 90%;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 40px;
+  margin: 30px 0px;
+}
+
+h2 {
+  font-size: 32px;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+h4 {
+  font-size: 18px;
 }
 
 button {
@@ -28,15 +48,35 @@ button :hover {
 }
 
 #dropbox {
-  border: 3px black dashed;
-  width: 200px;
-  height: 300px;
+  border: 3px #495867 dashed;
+  border-radius: 10px;
+  width: 80%;
+  height: 350px;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 #dropbox input {
   display: none
+}
+
+#dropbox h4 {
+  font-weight: 300;
+  width: 60%;
+  text-align: center;
+  margin: 25px 0px;
+}
+
+#dropbox label {
+  padding: 10px;
+  border: solid 2px #99ddff;
+  border-radius: 10px;
+}
+
+#dropbox label:hover {
+  cursor: pointer;
+  border: 2px solid #495867;
 }
 
 .dynamic-canvas {
