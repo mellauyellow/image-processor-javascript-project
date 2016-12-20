@@ -1,4 +1,4 @@
-body, h3, div, canvas, img, button, a {
+body, h3, div, canvas, img, button, a, input, label {
   margin: 0;
   padding: 0;
   border: 0;
@@ -31,6 +31,12 @@ button :hover {
   border: 3px black dashed;
   width: 200px;
   height: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+#dropbox input {
+  display: none
 }
 
 .dynamic-canvas {
