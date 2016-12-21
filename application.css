@@ -1,4 +1,4 @@
-body, h1, h2, h3, h4, h5, h6, div, canvas, img, button, a, input, label {
+body, h1, h2, h3, h4, h5, h6, div, canvas, img, i, button, a, input, label {
   margin: 0;
   padding: 0;
   border: 0;
@@ -100,11 +100,6 @@ button :hover {
   display: flex;
   flex-direction: column;
   align-items: center
-}
-
-.utility-buttons {
-  display: flex;
-  flex-direction: row;
 }
 
 .dynamic-canvas {
@@ -283,6 +278,32 @@ button :hover {
   0%, 39%, 100% { opacity: 0; }
   40% { opacity: 1; }
 }
+
+.utility-buttons {
+  display: flex;
+  flex-direction: row;
+}
+
+.utility-buttons > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px 5px 0px 5px;
+  width: 60px;
+}
+
+.utility-buttons > div:hover {
+  cursor: pointer
+}
+
+.utility-buttons h6 {
+  margin-top: 5px;
+}
+/*
+[class^="flaticon-"]:before, [class*=" flaticon-"]:before,
+[class^="flaticon-"]:after, [class*=" flaticon-"]:after {
+  font-size: 24px;
+}*/
 
 .download-processing {
   position: absolute;
