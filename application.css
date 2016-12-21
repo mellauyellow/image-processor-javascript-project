@@ -164,7 +164,7 @@ button :hover {
   margin: 0 auto;
   width: 15%;
   height: 15%;
-  background-color: #333;
+  background-color: #495867;
   border-radius: 100%;
   -webkit-animation: sk-circleFadeDelay 1.2s infinite ease-in-out both;
           animation: sk-circleFadeDelay 1.2s infinite ease-in-out both;
@@ -290,20 +290,17 @@ button :hover {
   align-items: center;
   margin: 10px 5px 0px 5px;
   width: 60px;
+  opacity: 0.6;
 }
 
 .utility-buttons > div:hover {
-  cursor: pointer
+  cursor: pointer;
+  opacity: 1.0
 }
 
 .utility-buttons h6 {
   margin-top: 5px;
 }
-/*
-[class^="flaticon-"]:before, [class*=" flaticon-"]:before,
-[class^="flaticon-"]:after, [class*=" flaticon-"]:after {
-  font-size: 24px;
-}*/
 
 .download-processing {
   position: absolute;
@@ -316,24 +313,24 @@ button :hover {
   visibility: hidden;
 }
 
-.download-processing h3 {
-  border: black 1px solid;
+.download-processing h4 {
+  border: #495867 1px solid;
+  border-radius: 10px;
   background-color: white;
   width: 50%;
-  padding: 20px;
+  padding-bottom: 20px;
+  text-align: center;
 }
 
 .spinner-dots {
-  margin: 100px auto 0;
-  width: 70px;
+  margin-top: 20px;
   text-align: center;
 }
 
 .spinner-dots > div {
-  width: 18px;
-  height: 18px;
-  background-color: #666;
-
+  width: 12px;
+  height: 12px;
+  background-color: #495867;
   border-radius: 100%;
   display: inline-block;
   -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
@@ -377,10 +374,37 @@ button :hover {
 }
 
 .start-over-content {
-  border: black 1px solid;
+  border: #495867 1px solid;
+  border-radius: 10px;
   background-color: white;
   width: 50%;
   padding: 20px;
   display: flex;
   flex-direction: column;
+  align-items: center;
+}
+
+.start-over-content h4 {
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.start-over-buttons {
+  display: flex;
+}
+
+.start-over-buttons button {
+  background-color: white;
+  padding: 10px;
+  border: solid 2px #99ddff;
+  border-radius: 10px;
+}
+
+.start-over-buttons button:hover {
+  border: solid 2px #495867;
+}
+
+.cancel:hover {
+  cursor: pointer;
+  font-weight: 600;
 }
