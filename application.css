@@ -101,14 +101,14 @@ button :hover {
   margin-bottom: 25px;
 }
 
-.preset-images img {
+.preset-images > img {
   margin: 0px 10px;
   opacity: 0.7;
   width: 150px;
   height: 100px;
 }
 
-.preset-images img:hover {
+.preset-images > img:hover {
   cursor: pointer;
   opacity: 1.0;
 }
