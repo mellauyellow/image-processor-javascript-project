@@ -318,7 +318,7 @@ button :hover {
   border-radius: 10px;
   background-color: white;
   width: 50%;
-  padding-bottom: 20px;
+  padding: 20px;
   text-align: center;
 }
 
