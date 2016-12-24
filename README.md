@@ -20,7 +20,26 @@ The animated gif below shows a sample image with each filter applied.
 ![animated gif of filters](wireframes/filter_gif1.gif)
 
 #### Image Manipulation
-- x,y coordinate system
+After an image is selected by the user, the image file is converted to a `Canvas` element. When a filter is applied, the image data is first extracted by calling `Canvas.getImageData()` and extracting the data property from the result, which returns an array of the RGBA values of every pixel in the image. After the appropriate convolution math is applied, the image data array is then overwritten with the new RGBA values to create the new image.
+
+Since all of the pixel data is represented in a single one-dimensional array, but the convolution math is based on a two-dimensional grid, I created two helper methods to easily convert between an x, y coordinate system and the image data array:
+
+```javascript
+readPixel(imageData, x, y) {
+  let i = (y * this.currentCanvas.width + x) * 4;
+  return [imageData[i], imageData[i + 1], imageData[i + 2]];
+}
+
+writePixel(imageData, pixelValues, x, y) {
+  let [r, g, b] = pixelValues;
+  let i = (y * this.currentCanvas.width + x) * 4;
+
+  imageData[i] = r;
+  imageData[i + 1] = g;
+  imageData[i + 2] = b;
+}
+```
+
 - looping to find neighbors
 - adjustable code for any matrix size
 - canvas manipulation
