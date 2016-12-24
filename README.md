@@ -1,14 +1,37 @@
 # matrixgram
 
-[Onward live][heroku]
+[matrixgram live][github-pages]
 
-[heroku]: https://fsp-onward.herokuapp.com/#/
+[github-pages]: https://mellauyellow.github.io/image-processor-javascript-project/
 
-Onward is a full-stack web application inspired by Yelp and Airbnb, targeted at folks
-who are relocating to a new city and need help finding a neighborhood to
-live in.  The backend is built using Ruby on Rails and a PostgreSQL database, with React.js/Redux on the frontend.  
+matrixgram is a web application that allows users to apply various filters to an image and download the fully edited image file to their local drive. matrixgram is built entirely on the client side using Javascript and the jQuery library.
 
 ## Features & Implementation
+
+### Filters
+
+#### Convolution Matrices
+matrixgram uses convolution matrices to apply different types of filters to images. In image processing, convolution matrices are used to assign a different weight to surrounding pixel RGB values, which are then averaged to create a new single RGB value for a given pixel using mathematical convolution. This process is used to calculate and overwrite every pixel within the original image. For more information on image processing and convolution matrices, please refer to the [Wikipedia page][wikipedia-page].
+
+[wikipedia-page]: https://en.wikipedia.org/wiki/Kernel_(image_processing)
+
+The animated gif below shows a sample image with each filter applied.
+
+![animated gif of filters](wireframes/filter_gif1.gif)
+
+#### Image Manipulation
+- x,y coordinate system
+- looping to find neighbors
+- adjustable code for any matrix size
+- canvas manipulation
+
+### File Manipulation
+- Reader
+- Blob
+- Original image separate from image on screen
+
+## Future Directions for the Project
+
 
 ### Neighborhoods and Neighborhood Pages
 
