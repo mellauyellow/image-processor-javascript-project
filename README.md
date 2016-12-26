@@ -8,9 +8,7 @@ matrixgram is a web application that allows users to apply various filters to an
 
 ## Features & Implementation
 
-### Filters
-
-#### Convolution Matrices
+### Convolution Matrices
 matrixgram uses convolution matrices to apply different types of filters to images. In image processing, convolution matrices are used to assign a different weight to surrounding pixel RGB values, which are then averaged to create a new single RGB value for a given pixel using mathematical convolution. This process is used to calculate and overwrite every pixel within the original image. For more information on image processing and convolution matrices, please refer to the [Wikipedia page][wikipedia-page].
 
 [wikipedia-page]: https://en.wikipedia.org/wiki/Kernel_(image_processing)
@@ -19,8 +17,8 @@ The animated gif below shows a sample image with each filter applied.
 
 ![animated gif of filters](wireframes/filter_gif1.gif)
 
-#### Image Manipulation
-After an image is selected by the user, the image file is converted to a `Canvas` element. When a filter is applied, the image data is first extracted by calling `Canvas.getImageData()` and extracting the data property from the result, which returns an array of the RGBA values of every pixel in the image. After the appropriate convolution math is applied, the image data array is then overwritten with the new RGBA values to create the new image.
+### Image Manipulation
+After an image is selected by the user, the image file is converted to a `Canvas` element. When a filter is applied, the image data is first extracted by calling `Canvas.getImageData()` and extracting the data property from the result, which returns an array of the RGBA values of every pixel in the image. After the appropriate convolution math is applied, the image data array is then overwritten with the new RGBA values using `Canvas.putImageData()` to create the new image.
 
 Since all of the pixel data is represented in a single one-dimensional array, but the convolution math is based on a two-dimensional grid, I created two helper methods to easily convert between an x, y coordinate system and the image data array:
 
@@ -40,9 +38,24 @@ writePixel(imageData, pixelValues, x, y) {
 }
 ```
 
-- looping to find neighbors
-- adjustable code for any matrix size
-- canvas manipulation
+Certain filters utilize a 3x3 matrix while others use a 5x5 matrix. I wanted to ensure that all of a pixel's neighbors could be easily found regardless of the size of the matrix, so the code to determine the matrix of neighboring pixels is adaptable for any size:
+
+```javascript
+calculateMatrix(x, y, data) {
+  let matrix = [];
+
+  let offset = Math.floor(Math.sqrt(this.filterMatrix.length) / 2);
+
+  for (var yOff = -1 * offset; yOff < offset + 1; yOff++) {
+    for (var xOff = -1 * offset; xOff < offset + 1; xOff++) {
+      let coords = this.pixelOnGridValue(x + xOff, y + yOff);
+      matrix.push(this.readPixel(data, ...coords));
+    }
+  }
+
+  return matrix;
+}
+```
 
 ### File Manipulation
 - Reader
