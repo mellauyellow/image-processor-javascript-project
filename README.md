@@ -67,7 +67,9 @@ The image shown in the browser is a resized version of the original image, while
 
 As each filter is selected, a new `Filter` object is created with the appropriate filter matrix and the smaller browser image is updated immediately. Since it does take a couple seconds for each filter to be applied even to the smaller browser image, a processing spinner appears over the image and all of the buttons within the matrixgram tool are disabled to prevent users from queuing up too many filter actions at once.
 
-![filter processing](wireframes/filter_processing.png | width=300)
+<img src="https://github.com/mellauyellow/image-processor-javascript-project/blob/master/wireframes/filter_processing.png" width="300">
+
+<!-- ![filter processing](wireframes/filter_processing.png | width=300) -->
 
  The `Filter` object is also stored in a public instance variable called `filterOrder`, which is an array of all `Filter` objects which have been applied. Upon saving the image, the original full-sized image is then processed based on the order of `Filter` objects in the `filterOrder` array. A brief modal pops up that alerts the user that the image is processing and will being downloading shortly.
 
