@@ -67,15 +67,21 @@ The image shown in the browser is a resized version of the original image, while
 
 As each filter is selected, a new `Filter` object is created with the appropriate filter matrix and the smaller browser image is updated immediately. Since it does take a couple seconds for each filter to be applied even to the smaller browser image, a processing spinner appears over the image and all of the buttons within the matrixgram tool are disabled to prevent users from queuing up too many filter actions at once.
 
-<img src="https://github.com/mellauyellow/image-processor-javascript-project/blob/master/wireframes/filter_processing.png" width="300">
+<img src="https://github.com/mellauyellow/image-processor-javascript-project/blob/master/wireframes/filter_processing.png" width="500">
 
-<!-- ![filter processing](wireframes/filter_processing.png | width=300) -->
+The undo and redo features are supported by the `imageCache` instance variable. When each filter is applied, the `imageData` at that given time is appended to the `imageCache`. When the undo button is clicked, the previous `imageData` is retrieved and placed on the canvas, and the corresponding action is done when the redo button is clicked. When making new edits to a previous version of the image, the new edits overwrite any data that may have previously existed beyond that point in the editing process.
 
- The `Filter` object is also stored in a public instance variable called `filterOrder`, which is an array of all `Filter` objects which have been applied. Upon saving the image, the original full-sized image is then processed based on the order of `Filter` objects in the `filterOrder` array. A brief modal pops up that alerts the user that the image is processing and will being downloading shortly.
+ The `Filter` object is also stored in a public instance variable called `filterOrder`, which is an array of all `Filter` objects which have been applied. The `filterOrder` is also appropriately updated when the undo or redo features are used. Upon downloading the image, the original full-sized image is then processed based on the order of `Filter` objects in the `filterOrder` array. A brief modal pops up that alerts the user that the image is processing and will being downloading shortly.
 
- ![download processing](wireframes/download_processing.png | width=300)
+ <img src="https://github.com/mellauyellow/image-processor-javascript-project/blob/master/wireframes/download_processing.png" width="500">
 
-
+After the full-sized image has been processed and drawn on the original `Canvas` element, it is converted to a `Blob` object using the `Canvas.toBlob()` method. The browser download is triggered from within the `toBlob()` callback.
 
 
 ## Future Directions for the Project
+
+### Additional Filters
+I'd like to continue exploring other types of filters that use convolution matrices, as well as expanding the functionality of matrixgram to include filters that don't use mathematical convolution, such as hue and saturation filters. It would also be fun to fine-tune these filters and build some combo filters that generate more functional (rather than abstract) images.
+
+### Area Filters
+matrixgram would be much more powerful with the ability to apply filters to only select areas of the image. In the future I'd like to work on allowing for the user to specify a rectangular portion of the image where filters would only be applied, or applied all but within the rectangle.
