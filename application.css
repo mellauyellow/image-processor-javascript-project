@@ -330,7 +330,7 @@ button :hover {
   visibility: hidden;
 }
 
-.download-processing h4 {
+.download-processing h5 {
   border: #495867 1px solid;
   border-radius: 10px;
   background-color: white;
@@ -401,7 +401,7 @@ button :hover {
   align-items: center;
 }
 
-.start-over-content h4 {
+.start-over-content h5 {
   text-align: center;
   padding-bottom: 20px;
 }
@@ -415,6 +415,7 @@ button :hover {
   padding: 10px;
   border: solid 2px #99ddff;
   border-radius: 10px;
+  font-size: 12px;
 }
 
 .start-over-buttons button:hover {
